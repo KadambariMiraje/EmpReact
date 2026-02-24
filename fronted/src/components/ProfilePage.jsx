@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
 
-function ProfilePage({ user = {} }) {  // ✅ Accept user as prop, not from useLocation
+function ProfilePage({ user = {} }) {  
   console.log("ProfilePage user:", user); 
   const [formData, setFormData] = useState(user);
   const [msg, setMsg] = useState("");
 
   useEffect(() => {
     setFormData(user);
-  }, [user]);
+  }, [user]);  
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleUpdate = async () => {
-    const id = user.emp_id ; // ✅ handle both cases
-    console.log("Updating employee with ID:", id); // ← add this to debug
+    const id = user.emp_id ;
+    console.log("Updating employee with ID:", id); 
     
     try {
         const res = await fetch(`http://localhost:3000/employee/${id}`, {

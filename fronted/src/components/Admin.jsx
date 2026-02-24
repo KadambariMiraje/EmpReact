@@ -5,7 +5,7 @@ import ProfilePage from "./ProfilePage";
 function Admin() {
   const { user } = useContext(AuthContext);
   const [employees, setEmployees] = useState([]);
-  const [msg, setMsg] = useState("");
+  const [msg, setMsg] = useState("");  
   const [selectedEmp, setSelectedEmp] = useState(null);
 
   const fetchEmployees = async () => {
@@ -49,11 +49,11 @@ function Admin() {
 
       <div className="row">
 
-        {/* Left: Employee Cards */}
+        
         {user.empId === "admin" && (
           <div className="col-md-5">
 
-            {/* Count */}
+            
             <div className="d-flex align-items-center justify-content-between mb-3">
               <h5 className="mb-0">All Employees</h5>
               <span className="badge bg-primary fs-6">Total: {employees.length}</span>
@@ -67,7 +67,7 @@ function Admin() {
                     style={{ cursor: "pointer" }}
                     onClick={() => setSelectedEmp(emp)}
                   >
-                    {/* Photo */}
+                  
                     {emp.photo ? (
                       <img
                         src={`data:image/jpeg;base64,${emp.photo}`}
@@ -96,7 +96,7 @@ function Admin() {
           </div>
         )}
 
-        {/* Right: Edit Panel */}
+       
         {user.empId === "admin" && (
           <div className="col-md-7">
             {selectedEmp ? (

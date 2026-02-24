@@ -4,13 +4,13 @@ import ProfilePage from "./ProfilePage";
 
 function EmpPage() {
   const location = useLocation();
-  const user = location.state?.user; // get the user from state
+  const user = location.state?.user; 
 
   if (!user) {
     return <p>User data not found. Please login again.</p>;
   }
 
-  return <ProfilePage user={user} />; // pass user to your profile component
+  return <ProfilePage user={user} />; 
 }
 
-export default EmpPage;
+export default EmpPage;  
